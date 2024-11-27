@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_vendor_analytics_dashboard" model="ir.ui.view">
+        <field name="name">vendor.analytics.form</field>
+        <field name="model">vendor.analytics</field>
+        <field name="arch" type="xml">
+            <form string="Vendor Analytics Dashboard">
+                <sheet>
+                    <group>
+                        <field name="vendor_id"/>
+                        <field name="total_sales"/>
+                        <field name="total_payments"/>
+                        <field name="balance"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="vendor_analytics_menu" name="Vendor Analytics" parent="base.menu_sales" action="action_vendor_analytics_dashboard"/>
+
+    <record id="action_vendor_analytics_dashboard" model="ir.actions.act_window">
+        <field name="name">Vendor Analytics</field>
+        <field name="res_model">vendor.analytics</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
